@@ -8,10 +8,25 @@ body {
   font-size: 400;
 }
 
-.container {
-  display: flexbox;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
 }
 
-.a:hover {
-  color: black;
+.container-wrapper {
+  padding: 1rem 0;
+}
+
+.container {
+  /* display: flexbox; */
+  display: grid;
+  width: 30rem;
+  height: 30rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: beige;
 }

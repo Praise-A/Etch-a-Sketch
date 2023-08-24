@@ -1,8 +1,20 @@
-let div = document.querySelector("");
+let container = document.querySelector(".container");
 
-let a = document.querySelector("");
+let createGrid = () => {
+  for (let i = 0; i < 16; i++) {
+    let grid = document.createElement("div");
+    let color = "black";
 
-a.innerHTML = `<div>
-<div></div>
-</div>`;
-div.append(a);
+    grid.classList.add("box");
+
+    container.appendChild(grid);
+
+    grid.addEventListener("mouseover", changeColor(grid, color));
+  }
+};
+
+let changeColor = (a, c) => {
+  a.style.backgroundColor = c;
+};
+
+createGrid();
