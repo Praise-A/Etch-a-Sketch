@@ -3,6 +3,7 @@ let colorOptions = document.querySelector("#color");
 let slider = document.querySelector("#slider");
 let squareDivs = slider.value;
 let vall = document.querySelector(".value");
+let clearBtn = document.querySelector("#clear");
 
 let createGrid = (divSize) => {
   for (let i = 0; i < divSize * divSize; i++) {
@@ -22,27 +23,17 @@ let createGrid = (divSize) => {
   }
 };
 
-slider.addEventListener("input", function () {
-  let val = document.getElementById("slider").value;
-  screenVal.textContent = val;
-  removeAllChildNodes(grid);
-  grid.setAttribute(
-    "style",
-    `grid-template-columns: repeat(${val}, 2fr); grid-template-rows: repeat(${val}, 2fr);`
-  );
-  for (let i = 0; i < val * val; i++) {
-    const div = document.createElement("div");
-    div.classList.add("cell");
-    div.addEventListener("mouseover", function (event) {
-      event.target.style.backgroundColor = "black";
-    });
-    grid.appendChild(div);
-  }
-});
-
 // color.addEventListener("select", changeColor());
 
 // slider.addEventListener("input", changeGridSize());
+
+//Clear Button
+clearBtn.addEventListener("click", function () {
+  let cell = container.children;
+  for (let i = 0; i < squareDivs * squareDivs; i++) {
+    cell[i].style.backgroundColor = "inherit";
+  }
+});
 
 // let changeGridSize = () => {};
 vall.innerHTML = slider.value;
