@@ -15,30 +15,37 @@
   <body>
     <main>
       <div class="main-wrapper">
-        <h1>Etch-a-Sketch</h1>
+        <div class="main-wrapper-inner">
+          <h1>Etch-a-Sketch</h1>
 
-        <div class="options">
-          <div class="">
-            <label for="color">Choose Color:</label>
-            <select name="color" id="color">
-              <option value="black">Black</option>
-              <option value="green">Green</option>
-              <option value="red">Red</option>
-            </select>
+          <div class="options">
+            <div class="color-option">
+              <label for="color">Choose Color:</label>
+              <select name="color" id="color">
+                <option value="black">Black</option>
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+              </select>
+            </div>
+            <div class="eraser-btn">
+              <button id="erase">Eraser</button>
+            </div>
+            <div class="clear-btn">
+              <button id="clear">Clear</button>
+            </div>
           </div>
-          <div class="clear-btn">
-            <button id="clear">Clear</button>
+
+          <div class="container-wrapper">
+            <div class="container-inner">
+              <div class="container"></div>
+            </div>
           </div>
-        </div>
 
-        <div class="container-wrapper">
-          <div class="container"></div>
-        </div>
-
-        <div class="slider-wrapper">
-          <h3>Choose Grid Size:</h3>
-          <input type="range" min="2" max="100" value="16" id="slider" />
-          <p class="value">16</p>
+          <div class="slider-wrapper">
+            <h3>Choose Grid Size:</h3>
+            <input type="range" min="2" max="100" value="16" id="slider" />
+            <p class="value">16</p>
+          </div>
         </div>
       </div>
     </main>

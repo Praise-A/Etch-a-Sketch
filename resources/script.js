@@ -2,8 +2,8 @@ let container = document.querySelector(".container");
 let colorOptions = document.querySelector("#color");
 let slider = document.querySelector("#slider");
 let squareDivs = slider.value;
-let vall = document.querySelector(".value");
 let clearBtn = document.querySelector("#clear");
+let value = document.querySelector(".value");
 
 let createGrid = (divSize) => {
   for (let i = 0; i < divSize * divSize; i++) {
@@ -14,32 +14,36 @@ let createGrid = (divSize) => {
     container.style.gridTemplateColumns = `repeat(${divSize}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${divSize}, 1fr)`;
 
-    grid.addEventListener(
-      "mouseover",
-      (chooseColor = (e) => {
-        e.target.style.backgroundColor = `${colorOptions.value}`;
-      })
-    );
+    grid.addEventListener("mouseover", (e) => {
+      e.target.style.backgroundColor = `${colorOptions.value}`;
+    });
   }
 };
 
-// color.addEventListener("select", changeColor());
-
-// slider.addEventListener("input", changeGridSize());
-
 //Clear Button
-clearBtn.addEventListener("click", function () {
+clearBtn.addEventListener("click", () => clearGrid());
+
+let clearGrid = () => {
   let cell = container.children;
-  for (let i = 0; i < squareDivs * squareDivs; i++) {
+  let val = slider.value;
+  for (let i = 0; i < val * val; i++) {
     cell[i].style.backgroundColor = "inherit";
   }
+};
+
+// slider.addEventListener("input", ());
+
+//Change Slider Value
+slider.addEventListener("input", () => {
+  let val = slider.value;
+  value.innerHTML = val;
+  changeGridSize(val);
 });
 
-// let changeGridSize = () => {};
-vall.innerHTML = slider.value;
-slider.addEventListener("input", function () {
-  vall.innerHTML = this.value;
-  squareDivs = this.value;
-});
+//Change Grid Size
+let changeGridSize = (a) => {
+  container.innerHTML = "";
+  createGrid(a);
+};
 
 createGrid(squareDivs);
