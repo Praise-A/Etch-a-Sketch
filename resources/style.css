@@ -36,6 +36,7 @@ option {
 
 .color-option {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -44,12 +45,14 @@ option {
 }
 
 .color-option select,
+.random-btn button,
 .eraser-btn button,
 .clear-btn button {
   padding: 0.2rem 0.3rem;
   border-radius: 0.5rem;
 }
 
+.random-btn,
 .eraser-btn,
 .clear-btn {
   padding-left: 0.5rem;
@@ -68,7 +71,6 @@ option {
   display: grid;
   width: 35rem;
   height: 35rem;
-  gap: 0.1rem;
 }
 
 .slider-wrapper {
@@ -82,4 +84,31 @@ option {
 
 #slider:hover {
   opacity: 1;
+}
+
+.colors {
+  display: flex;
+}
+
+.colors > div {
+  padding: 0.3rem;
+}
+
+.colors button {
+  padding: 0.2rem 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.select-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.clear-btn {
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  border: 1px solid black;
 }
